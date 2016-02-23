@@ -30,6 +30,8 @@ public class HeroController : MonoBehaviour {
 	private Transform _transform;
 	private Rigidbody2D _rigidBody2D;
 	private bool _isGrounded;
+	private AudioSource[] _audioSources;
+	private AudioSource _jumpSound;
 
 
 
@@ -50,6 +52,9 @@ public class HeroController : MonoBehaviour {
 		this._jump = 0f;
 		this._animator.SetInteger ("Anim_State", 0);
 		this._facialRight = true;
+
+		this._audioSources = gameObject.GetComponents<AudioSource> ();
+		this._jumpSound = this._audioSources [0];
 	}
 	
 	// Update is called once per frame
@@ -104,11 +109,13 @@ public class HeroController : MonoBehaviour {
 				this._animator.SetInteger ("Anim_State", 2);
 				if (absVelY < this.velocityRange.max) {
 					forceY = this.jumpForce;
+					this._isGrounded = false; 
+					this._jumpSound.Play ();
 				}
 			}
 		} else {
 			// jump clip
-			this._animator.SetInteger ("Anim_State", 2);
+		this._animator.SetInteger ("Anim_State", 2);
 		}
 
 		Debug.Log (forceX);
