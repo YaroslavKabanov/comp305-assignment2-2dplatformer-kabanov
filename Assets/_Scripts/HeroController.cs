@@ -17,7 +17,7 @@ public class HeroController : MonoBehaviour {
 		this._animator = gameObject.GetComponent<Animator> ();
 		this._move = 0f;
 		this._jump = 0f;
-		this._animator.SetInteger ("AnimState", 0);
+		this._animator.SetInteger ("Anim_State", 0);
 		this._facialRight = true;
 	}
 	
@@ -33,14 +33,14 @@ public class HeroController : MonoBehaviour {
 				this._facialRight = false;
 			}
 
-			this._animator.SetInteger ("AnimState", 1);
+			this._animator.SetInteger ("Anim_State", 1);
 		} else {
-			this._animator.SetInteger ("AnimState", 0);
+			this._animator.SetInteger ("Anim_State", 0);
 		}
 
 
 		if (this._jump > 0) {
-			this._animator.SetInteger ("AnimState", 2);
+			this._animator.SetInteger ("Anim_State", 2);
 		}
 
 		this._flip ();
