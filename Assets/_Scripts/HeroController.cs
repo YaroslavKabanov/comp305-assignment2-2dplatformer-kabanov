@@ -21,6 +21,7 @@ public class HeroController : MonoBehaviour {
 	public float moveForce;
 	public float jumpForce;
 	public Transform groundCheck;
+	public GameController gameController;
 
 	// private variables 
 	private Animator _animator;
@@ -32,6 +33,8 @@ public class HeroController : MonoBehaviour {
 	private bool _isGrounded;
 	private AudioSource[] _audioSources;
 	private AudioSource _jumpSound;
+	private AudioSource _endGameSound;
+	private Vector2 _currentPosition;
 
 
 
@@ -42,7 +45,7 @@ public class HeroController : MonoBehaviour {
 
 		this.moveForce = 1000f;
 		this.jumpForce = 35000f;
-	
+
 	
 		// initialize private variables
 		this._transform = gameObject.GetComponent<Transform> ();
@@ -55,10 +58,26 @@ public class HeroController : MonoBehaviour {
 
 		this._audioSources = gameObject.GetComponents<AudioSource> ();
 		this._jumpSound = this._audioSources [0];
+		this._endGameSound = this._audioSources [1];
+
+
+		this.Reset ();
+
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+		this._currentPosition = this._transform.position; 
+
+		if (this._currentPosition.y <= -450) {
+			this._endGameSound.Play ();
+			this.Reset ();
+		}
+
+	//	if (this._currentPosition.x < 4572) {
+	//		this._finishGameSound.Play ();
+	//	}
 
 		this._isGrounded = Physics2D.Linecast (
 			this._transform.position,
@@ -113,17 +132,17 @@ public class HeroController : MonoBehaviour {
 					this._jumpSound.Play ();
 				}
 			}
+
 		} else {
 			// jump clip
 		this._animator.SetInteger ("Anim_State", 2);
 		}
 
-		Debug.Log (forceX);
-		Debug.Log (forceY);
+
 		// apply forces to the player
 		this._rigidBody2D.AddForce (new Vector2 (forceX, forceY));
 	}
-
+		
 
 	private void _flip() {
 		if(this._facialRight) {
@@ -132,4 +151,9 @@ public class HeroController : MonoBehaviour {
 			this._transform.localScale = new Vector2 (-1, 1);
 		}
 	} 
+
+	public void Reset () {
+		this._transform.position = new Vector2 (332f, 400f);
+		this.gameController.LivesValue -= 1;
+	}
 }

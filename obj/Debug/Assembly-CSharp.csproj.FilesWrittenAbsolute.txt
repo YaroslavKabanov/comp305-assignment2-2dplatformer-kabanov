@@ -1,0 +1,17 @@
+/Users/Yarik/Desktop/comp305-as2-2dplatformer/Temp/bin/Debug/UnityEngine.dll
+/Users/Yarik/Desktop/comp305-as2-2dplatformer/Temp/bin/Debug/UnityEditor.dll
+/Users/Yarik/Desktop/comp305-as2-2dplatformer/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/Yarik/Desktop/comp305-as2-2dplatformer/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/Yarik/Desktop/comp305-as2-2dplatformer/Temp/bin/Debug/Mono.Cecil.dll
+/Users/Yarik/Desktop/comp305-as2-2dplatformer/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/Yarik/Desktop/comp305-as2-2dplatformer/Temp/bin/Debug/Unity.DataContract.dll
+/Users/Yarik/Desktop/comp305-as2-2dplatformer/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/Yarik/Desktop/comp305-as2-2dplatformer/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/Yarik/Desktop/comp305-as2-2dplatformer/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/Yarik/Desktop/comp305-as2-2dplatformer/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/Yarik/Desktop/comp305-as2-2dplatformer/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/Yarik/Desktop/comp305-as2-2dplatformer/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/Yarik/Desktop/comp305-as2-2dplatformer/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/Yarik/Desktop/comp305-as2-2dplatformer/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/Yarik/Desktop/comp305-as2-2dplatformer/obj/Debug/Assembly-CSharp.dll
+/Users/Yarik/Desktop/comp305-as2-2dplatformer/obj/Debug/Assembly-CSharp.dll.mdb
