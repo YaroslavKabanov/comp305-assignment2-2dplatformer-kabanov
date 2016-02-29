@@ -1,4 +1,14 @@
-﻿using UnityEngine;
+﻿// ********************************************
+// * Source file : HeroController.cs        *
+// * Author name : Yaroslav Kabanov           *
+// * Last Modified by : Yaroslav Kabanov      *
+// * Last Date Modified : February 29th, 2016 *
+// * Program Description : 2D Ninja platformer*
+// * Version: 1.0                             *
+// ********************************************    
+// Git Rero: https://github.com/YaroslavKabanov/comp305-assignment2-2dplatformer-kabanov.git
+
+using UnityEngine;
 using System.Collections;
 
 [System.Serializable]
@@ -44,7 +54,7 @@ public class HeroController : MonoBehaviour {
 		this.velocityRange = new VelocityRange (300f,30000f);
 
 		this.moveForce = 1000f;
-		this.jumpForce = 35000f;
+		this.jumpForce = 42000f;
 
 	
 		// initialize private variables
@@ -75,9 +85,6 @@ public class HeroController : MonoBehaviour {
 			this.Reset ();
 		}
 
-	//	if (this._currentPosition.x < 4572) {
-	//		this._finishGameSound.Play ();
-	//	}
 
 		this._isGrounded = Physics2D.Linecast (
 			this._transform.position,
@@ -143,7 +150,7 @@ public class HeroController : MonoBehaviour {
 		this._rigidBody2D.AddForce (new Vector2 (forceX, forceY));
 	}
 		
-
+	// flip player when controlls used
 	private void _flip() {
 		if(this._facialRight) {
 			this._transform.localScale = new Vector2 (1, 1);
@@ -152,6 +159,7 @@ public class HeroController : MonoBehaviour {
 		}
 	} 
 
+	// reset player to start position if fall
 	public void Reset () {
 		this._transform.position = new Vector2 (332f, 400f);
 		this.gameController.LivesValue -= 1;

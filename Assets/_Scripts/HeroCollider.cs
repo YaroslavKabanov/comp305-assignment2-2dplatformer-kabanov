@@ -1,4 +1,14 @@
-﻿using UnityEngine;
+﻿// ********************************************
+// * Source file : HeroCollider.cs            *
+// * Author name : Yaroslav Kabanov           *
+// * Last Modified by : Yaroslav Kabanov      *
+// * Last Date Modified : February 29th, 2016 *
+// * Program Description : 2D Ninja platformer*
+// * Version: 1.0                             *
+// ********************************************    
+// Git Rero: https://github.com/YaroslavKabanov/comp305-assignment2-2dplatformer-kabanov.git
+
+using UnityEngine;
 using System.Collections;
 
 public class HeroCollider : MonoBehaviour {
@@ -25,13 +35,14 @@ public class HeroCollider : MonoBehaviour {
 	}
 
 	public void OnTriggerEnter2D(Collider2D other) {
+		// collision with diamond object
 		if (other.gameObject.CompareTag ("Diamond")) {
 			this._diamondCollectSound.Play ();
 			Destroy (other.gameObject);
 			this.gameController.ScoreValue += 100;
 		}
 	
-
+		// collision with finish object
 		if (other.gameObject.CompareTag ("Finish")) {
 			this._finishGameSound.Play ();
 		}
