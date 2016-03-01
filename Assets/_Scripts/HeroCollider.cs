@@ -17,6 +17,7 @@ public class HeroCollider : MonoBehaviour {
 	private AudioSource[] _audioSources;
 	private AudioSource _finishGameSound;
 	private AudioSource _diamondCollectSound;
+	private AudioSource _hitCactusSound;
 
 
 	// public variables 
@@ -28,6 +29,7 @@ public class HeroCollider : MonoBehaviour {
 		this._audioSources = gameObject.GetComponents<AudioSource> ();
 		this._finishGameSound = this._audioSources [2];
 		this._diamondCollectSound = this._audioSources [3];
+		this._hitCactusSound = this._audioSources [5];
 	}
 	
 	// Update is called once per frame
@@ -42,7 +44,13 @@ public class HeroCollider : MonoBehaviour {
 			Destroy (other.gameObject);
 			this.gameController.ScoreValue += 100;
 		}
-	
+
+		//enemy collision 
+
+		if (other.gameObject.CompareTag ("Enemy")) {
+			this.gameController.LivesValue -= 1;
+			this._hitCactusSound.Play ();
+		}
 		// collision with finish object
 		if (other.gameObject.CompareTag ("Finish")) {
 			this._finishGameSound.Play ();

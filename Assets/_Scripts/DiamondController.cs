@@ -29,6 +29,7 @@ public class DiamondController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		diamond = GameObject.Find("diamond");
 		Respawn ();
 	}
 	
