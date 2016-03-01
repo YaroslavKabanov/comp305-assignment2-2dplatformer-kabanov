@@ -18,6 +18,7 @@ public class HeroCollider : MonoBehaviour {
 	private AudioSource _finishGameSound;
 	private AudioSource _diamondCollectSound;
 
+
 	// public variables 
 	public GameController gameController;
 
@@ -45,6 +46,9 @@ public class HeroCollider : MonoBehaviour {
 		// collision with finish object
 		if (other.gameObject.CompareTag ("Finish")) {
 			this._finishGameSound.Play ();
+			this.gameController.WinLabel.gameObject.SetActive (true);
+			this.gameController.RestartButton.gameObject.SetActive (true);
+
 		}
 	}
 

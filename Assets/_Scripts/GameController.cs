@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour {
 	public Text GameOverLabel;
 	public Text HighScoreLabel;
 	public Button RestartButton; 
+	public Text WinLabel;
 
 
 
@@ -79,6 +80,7 @@ public class GameController : MonoBehaviour {
 		this.GameOverLabel.gameObject.SetActive (false);
 		this.HighScoreLabel.gameObject.SetActive (false);
 		this.RestartButton.gameObject.SetActive (false);
+		this.WinLabel.gameObject.SetActive (false);
 		this.ScoreLabel.gameObject.SetActive (true);
 		this.LivesLabel.gameObject.SetActive (true);
 
@@ -93,6 +95,7 @@ public class GameController : MonoBehaviour {
 		this.RestartButton.gameObject.SetActive (true);
 		this.ScoreLabel.gameObject.SetActive (false);
 		this.LivesLabel.gameObject.SetActive (false);
+
 
 
 	}
